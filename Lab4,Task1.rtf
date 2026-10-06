@@ -1,0 +1,149 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13040\viewh8400\viewkind0
+\deftab720
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5276\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #The two terms are identical, so they unify successfully.\cf0 \AppleHighlight-1 \cell \lastrow\row
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \AppleHighlight0 \outl0\strokewidth0 25 ?- house = house.\
+true.\
+\
+
+\f0\b #\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Both terms are constants, and a constant can only unify with itself.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 26 ?- house = abc.\
+false.\
+\
+
+\f0\b #\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Both terms have the same name 
+\fs26 \strokec2 edge
+\fs24 \strokec2  and the same number of arguments. The variable 
+\fs26 \strokec2 C
+\fs24 \strokec2  is instantiated to 
+\fs26 \strokec2 a
+\fs24 \strokec2  so the terms match.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 27 ?- edge(a,b) = edge(C,b).\
+C = a.\
+\
+
+\f0\b #\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The two terms have the same name and number of arguments. 
+\fs26 \strokec2 C
+\fs24 \strokec2  is instantiated to 
+\fs26 \strokec2 a
+\fs24 \strokec2  and 
+\fs26 \strokec2 B
+\fs24 \strokec2  is instantiated to 
+\fs26 \strokec2 d
+\fs24 \strokec2 .\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 28 ?- edge(a,d) = edge(C,B).\
+C = a,\
+B = d.\
+\
+
+\f0\b #\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The variables can be instantiated so that both terms become identical. Therefore, the terms unify successfully.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 29 ?- edge(C,B) = edge(a,d).\
+C = a,\
+B = d.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #Both terms have the same name and number of arguments. 
+\fs26 A
+\fs24  is instantiated to 
+\fs26 a
+\fs24 , and 
+\fs26 B
+\fs24  is instantiated to the term 
+\fs26 f(g,h)
+\fs24 .\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 30 ?- edge(A,f(g,h)) = edge(a,B).\
+A = a,\
+B = f(g, h).\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 #The same variable 
+\fs26 A
+\fs24  appears twice, so both positions must have the same value. However, 
+\fs26 b
+\fs24  and 
+\fs26 c
+\fs24  are different constants, so the terms cannot unify.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 31 ?- edge(A,A) = edge(b,c).\
+false.\
+\
+
+\f0\b #\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The same variable 
+\fs26 \strokec2 A
+\fs24 \strokec2  appears twice, and both corresponding values are 
+\fs26 \strokec2 b
+\fs24 \strokec2 . Therefore, 
+\fs26 \strokec2 A
+\fs24 \strokec2  can be instantiated to 
+\fs26 \strokec2 b
+\fs24 \strokec2 .\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 32 ?- edge(A,A) = edge(b,b).\
+A = b.\
+\
+
+\f0\b #
+\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A
+\fs24 \strokec2  and 
+\fs26 \strokec2 B
+\fs24 \strokec2  become linked through unification. When 
+\fs26 \strokec2 B
+\fs24 \strokec2  is instantiated to 
+\fs26 \strokec2 f
+\fs24 \strokec2 , 
+\fs26 \strokec2 A
+\fs24 \strokec2  is also linked to the same value.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1\b0 33 ?- A = B, B = f.\
+A = B, B = f.\
+\
+
+\f0\b #
+\fs26 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A
+\fs24 \strokec2  and 
+\fs26 \strokec2 B
+\fs24 \strokec2  are first unified, and 
+\fs26 \strokec2 B
+\fs24 \strokec2  is then instantiated to 
+\fs26 \strokec2 f
+\fs24 \strokec2 . Therefore, 
+\fs26 \strokec2 A
+\fs24 \strokec2  must also be 
+\fs26 \strokec2 f
+\fs24 \strokec2 . Trying to make 
+\fs26 \strokec2 A = e
+\fs24 \strokec2  causes a conflict, so the query fails.
+\f1\b0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+34 ?- A = B, B = f, A = e.\
+false.\
+}
