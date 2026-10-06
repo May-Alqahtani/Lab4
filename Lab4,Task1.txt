@@ -1,0 +1,43 @@
+#The two terms are identical, so they unify
+successfully.
+25 ?- house = house.
+true.
+
+#Both terms are constants, and a constant can only unify with itself.
+26 ?- house = abc.
+false.
+
+#Both terms have the same name edge and the same number of arguments. The variable C is instantiated to a so the terms match.
+27 ?- edge(a,b) = edge(C,b).
+C = a.
+
+#The two terms have the same name and number of arguments. C is instantiated to a and B is instantiated to d.
+28 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+#The variables can be instantiated so that both terms become identical. Therefore, the terms unify successfully.
+29 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+#Both terms have the same name and number of arguments. A is instantiated to a, and B is instantiated to the term f(g,h).
+30 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+
+#The same variable A appears twice, so both positions must have the same value. However, b and c are different constants, so the terms cannot unify.
+31 ?- edge(A,A) = edge(b,c).
+false.
+
+#The same variable A appears twice, and both corresponding values are b. Therefore, A can be instantiated to b.
+32 ?- edge(A,A) = edge(b,b).
+A = b.
+
+#A and B become linked through unification. When B is instantiated to f, A is also linked to the same value.
+33 ?- A = B, B = f.
+A = B, B = f.
+
+#A and B are first unified, and B is then instantiated to f. Therefore, A must also be f. Trying to make A = e causes a conflict, so the query fails.
+34 ?- A = B, B = f, A = e.
+false.
